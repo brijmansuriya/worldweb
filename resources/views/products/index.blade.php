@@ -35,13 +35,12 @@
                         <table class="table-fixed w-full border-collapse border border-gray-300">
                             <thead>
                                 <tr class="bg-gray-200">
-                                    <th class="w-12 border p-2">#</th>
-                                    <th class="w-1/4 border p-2">Title</th>
-                                    <th class="w-1/4 border p-2">Category</th>
-                                    <th class="w-1/4 border p-2">Price</th>
-                                    <th class="w-32 border p-2">Image</th>
-                                    <th class="w-24 border p-2">Status</th>
-                                    <th class="w-40 border p-2">Actions</th>
+                                    <th class="w-10 border p-2">#</th>
+                                    <th class="w-20 border p-2">Title</th>
+                                    <th class="w-20 border p-2">Category</th>
+                                    <th class="w-20 border p-2">Price</th>
+                                    <th class="w-20 border p-2">Status</th>
+                                    <th class="w-20 border p-2">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,12 +51,6 @@
                                         <td class="border p-2">{{ $product->title }}</td>
                                         <td class="border p-2">{{ implode(', ', $product->categories->pluck('title')->toArray()) }}</td>
                                         <td class="border p-2">{{ $product->price }}</td>
-                                        <td class="border border-gray-300 p-2 text-center">
-                                            <a href="{{ $product->image }}" target="_blank">
-                                                <img src="{{ $product->image }}" width="50" height="50"
-                                                    alt="product Image">
-                                            </a>
-                                        </td>
                                         <td class="border p-2">{{ ucfirst($product->status) }}</td>
                                         <td class="border p-2 flex gap-3">
                                             <x-primary-button>
