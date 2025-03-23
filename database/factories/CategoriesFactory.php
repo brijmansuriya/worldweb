@@ -21,7 +21,7 @@ class CategoriesFactory extends Factory
         return [
             'title' => $this->faker->word(),
             'description' => $this->faker->sentence(),
-            'image' => $this->faker->imageUrl(640, 480, 'cats'),
+            // 'image' => $this->faker->imageUrl(640, 480, 'cats'),
             'status' => $this->faker->randomElement(['active', 'inactive']),
         ];
     }

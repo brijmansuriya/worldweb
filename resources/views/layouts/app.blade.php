@@ -32,5 +32,14 @@
                 {{ $slot }}
             </main>
         </div>
+
+        <script>
+             document.getElementById('image').addEventListener('change', function(event) {
+                let currentImage = document.getElementById('current-image');
+                if (currentImage) {
+                    currentImage.style.display = 'none'; // Hide old image
+                }
+            });
+        </script>
     </body>
 </html>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ProductsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,7 +24,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('categories', CategoriesController::class);
     
     // Products Resource Route
-    // Route::resource('products', ProductController::class);
+    Route::resource('products', ProductsController::class);
 });
 
 require __DIR__.'/auth.php';
