@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoriesController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,7 +20,7 @@ Route::middleware('auth')->group(function () {
 // Protected Routes
 Route::middleware(['auth'])->group(function () {
     // Categories Resource Route
-    // Route::resource('categories', CategoryController::class);
+    Route::resource('categories', CategoriesController::class);
     
     // Products Resource Route
     // Route::resource('products', ProductController::class);
