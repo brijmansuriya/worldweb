@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\CategoriesController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,13 +18,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-// Protected Routes
+
 Route::middleware(['auth'])->group(function () {
-    // Categories Resource Route
     Route::resource('categories', CategoriesController::class);
-    
-    // Products Resource Route
     Route::resource('products', ProductsController::class);
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
